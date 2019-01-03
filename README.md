@@ -12,7 +12,7 @@ The repository includes:
 * ParallelModel class for multi-GPU training
 * Evaluation on MS COCO metrics (AP)
 * Example of training on your own dataset
-* Datasets for Bauelements and Example of JSON data need to train dataset
+* Datasets for Bauelements and Example of JSON data (using [VGG Image Annotator](https://gitlab.com/vgg/via/tags/via-1.0.6)), needs to train dataset
 
 # Contributing
 
