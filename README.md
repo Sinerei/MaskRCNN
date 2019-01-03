@@ -13,21 +13,19 @@ Contributions to this repository are welcome. Examples of things you can contrib
 - Visualizations and examples.
 
 
-# Requirements
-
-Python 3.4, TensorFlow 1.3, Keras 2.0.8 and other common packages listed in requirements.txt.
-MS COCO Requirements:
-
+### MS COCO Requirements:
 To train or test on MS COCO, you'll also need:
+* pycocotools (installation instructions below)
+* [MS COCO Dataset](http://cocodataset.org/#home)
+* Download the 5K [minival](https://dl.dropboxusercontent.com/s/o43o90bna78omob/instances_minival2014.json.zip?dl=0)
+  and the 35K [validation-minus-minival](https://dl.dropboxusercontent.com/s/s3tw5zcg7395368/instances_valminusminival2014.json.zip?dl=0)
+  subsets. More details in the original [Faster R-CNN implementation](https://github.com/rbgirshick/py-faster-rcnn/blob/master/data/README.md).
 
-- pycocotools (installation instructions below)
-- MS COCO Dataset
-- Download the 5K minival and the 35K validation-minus-minival subsets. More details in the original Faster R-CNN implementation.
-
-If you use Docker, the code has been verified to work on this Docker container.
+If you use Docker, the code has been verified to work on
+[this Docker container](https://hub.docker.com/r/waleedka/modern-deep-learning/).
 
 
-# Installation
+## Installation
 
 1- Install dependencies
 
@@ -44,3 +42,31 @@ If you use Docker, the code has been verified to work on this Docker container.
 5- (Optional) To train or test on MS COCO install pycocotools from one of these repos. They are forks of the original pycocotools with fixes for Python3 and Windows (the official repo doesn't seem to be active anymore).
 - Linux: https://github.com/waleedka/coco
 - Windows: https://github.com/philferriere/cocoapi. You must have the Visual C++ 2015 build tools on your path (see the repo for additional details)
+
+# Getting Started
+* [demo.ipynb](samples/BauelementSegmentation/demo.ipynb) Is the easiest way to start. It shows an example of using a model pre-trained on MS COCO to segment objects in your own images.
+It includes code to run object detection and instance segmentation on arbitrary images.
+
+* [inspect_data.ipynb](samples/BauelementSegmentation/coco/inspect_bauelement_data.ipynb). This notebook visualizes the different pre-processing steps
+to prepare the training data.
+
+# Training on MS COCO
+We're providing pre-trained weights for MS COCO to make it easier to start. You can
+use those weights as a starting point to train your own variation on the network.
+Usage: import the module (see Jupyter notebooks for examples), or run from the command line as such:
+
+    # Train a new model starting from pre-trained COCO weights
+    python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=coco
+    
+    # For example: 
+    python3 Bauelement.py train --dataset=/home/parchami/PycharmProjects/MaskRCNN/datasets/BauelementDataset --weights=coco
+
+    # Resume training a model that you had trained earlier
+    python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=last
+
+    # Train a new model starting from ImageNet weights
+    python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=imagenet
+
+    # Apply color splash to an image
+    python3 Bauelement.py splash --weights=/path/to/weights/file.h5 --image=<URL or path to file>
+
