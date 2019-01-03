@@ -1,7 +1,9 @@
 # MaskRCNN
 Implementation of MaskRCNN for detecting Bauelemente
 
-Contributing
+
+
+# Contributing
 
 Contributions to this repository are welcome. Examples of things you can contribute:
 
@@ -11,7 +13,7 @@ Contributions to this repository are welcome. Examples of things you can contrib
     Visualizations and examples.
 
 
-Requirements
+# Requirements
 
 Python 3.4, TensorFlow 1.3, Keras 2.0.8 and other common packages listed in requirements.txt.
 MS COCO Requirements:
@@ -25,7 +27,7 @@ To train or test on MS COCO, you'll also need:
 If you use Docker, the code has been verified to work on this Docker container.
 
 
-Installation
+# Installation
 
     Install dependencies
 
