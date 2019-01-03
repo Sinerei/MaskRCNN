@@ -72,7 +72,7 @@ class BauelementConfig(Config):
     # BACKBONE = "resnet101"
 
     # Number of classes (including background)
-    NUM_CLASSES = 1 + 1  # Background + balloon
+    NUM_CLASSES = 1 + 1  # Background + Bauelement
 
     # Number of training steps per epoch
     STEPS_PER_EPOCH = 100
@@ -87,7 +87,7 @@ class BauelementConfig(Config):
 class BauelementDataset(utils.Dataset):
 
     def load_bauelement(self, dataset_dir, subset):
-        """Load a subset of the Balloon dataset.
+        """Load a subset of the Bauelement dataset.
         dataset_dir: Root directory of the dataset.
         subset: Subset to load: train or val
         """
@@ -286,13 +286,13 @@ if __name__ == '__main__':
 
     # Parse command line arguments
     parser = argparse.ArgumentParser(
-        description='Train Mask R-CNN to detect balloons.')
+        description='Train Mask R-CNN to detect bauelements.')
     parser.add_argument("command",
                         metavar="<command>",
                         help="'train' or 'splash'")
     parser.add_argument('--dataset', required=False,
-                        metavar="/path/to/balloon/dataset/",
-                        help='Directory of the Balloon dataset')
+                        metavar="/path/to/bauelement/dataset/",
+                        help='Directory of the Bauelement dataset')
     parser.add_argument('--weights', required=True,
                         metavar="/path/to/weights.h5",
                         help="Path to weights .h5 file or 'coco'")
