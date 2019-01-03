@@ -3,6 +3,17 @@ Implementation of [Mask R-CNN](https://arxiv.org/abs/1703.06870) on Python 3,  K
 
 ![Instance Segmentation Sample](samples/BauelementSegmentation/bauelement.png)
 
+The repository includes:
+* Source code of Mask R-CNN built on FPN and ResNet101.
+* Training code for MS COCO
+* Pre-trained weights for MS COCO
+* Pre-trained weight for Bauelemente
+* Jupyter notebooks to visualize the detection pipeline at every step
+* ParallelModel class for multi-GPU training
+* Evaluation on MS COCO metrics (AP)
+* Example of training on your own dataset
+* Datasets for Bauelements and Example of JSON data need to train dataset
+
 # Contributing
 
 Contributions to this repository are welcome. Examples of things you can contribute:
@@ -70,3 +81,17 @@ Usage: import the module (see Jupyter notebooks for examples), or run from the c
     # Apply color splash to an image
     python3 Bauelement.py splash --weights=/path/to/weights/file.h5 --image=<URL or path to file>
 
+# Training on Your Own Dataset
+
+In summary, to train the model on your own dataset you'll need to extend two classes:
+
+```Config```
+This class contains the default configuration. Subclass it and modify the attributes you need to change.
+
+```Dataset```
+This class provides a consistent way to work with any dataset. 
+It allows you to use new datasets for training without having to change 
+the code of the model. It also supports loading multiple datasets at the
+same time, which is useful if the objects you want to detect are not 
+all available in one dataset. 
+See examples in `samples/coco/coco.py`, `samples/BauelementSegmentation/Bauelement.py`.
