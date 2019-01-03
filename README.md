@@ -78,9 +78,6 @@ Usage: import the module (see Jupyter notebooks for examples), or run from the c
     # Train a new model starting from ImageNet weights
     python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=imagenet
 
-    # Apply color splash to an image
-    python3 Bauelement.py splash --weights=/path/to/weights/file.h5 --image=<URL or path to file>
-
 # Training on Your Own Dataset
 
 In summary, to train the model on your own dataset you'll need to extend two classes:
