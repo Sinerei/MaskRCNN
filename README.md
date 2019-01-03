@@ -1,7 +1,7 @@
 # MaskRCNN
-Implementation of MaskRCNN for detecting Bauelemente
+Implementation of [Mask R-CNN](https://arxiv.org/abs/1703.06870) on Python 3,  Keras, and TensorFlow. for detecting Bauelemente
 
-
+![Instance Segmentation Sample](assets/bauelement.png)
 
 # Contributing
 
