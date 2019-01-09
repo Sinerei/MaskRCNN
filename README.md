@@ -98,3 +98,11 @@ same time, which is useful if the objects you want to detect are not
 all available in one dataset. 
 
 See examples in `samples/coco/coco.py`, `samples/BauelementSegmentation/Bauelement.py`, `samples/BauelementSegmentation/MultiBauelement.py`.
+
+# Training on Multiclass Dataset
+
+To train in Multiclass mode useing `MultiBauelement.py`.
+You should only add some classes using add.class() method and adding class_id's to JSON attribute field and train new weights.
+
+![Instance Segmentation Sample for multi class training](samples/BauelementSegmentation/Multiclass.png)
+
