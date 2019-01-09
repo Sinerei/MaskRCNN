@@ -71,7 +71,10 @@ Usage: import the module (see Jupyter notebooks for examples), or run from the c
     
     # For example: 
     python3 Bauelement.py train --dataset=/home/parchami/PycharmProjects/MaskRCNN/datasets/BauelementDataset --weights=coco
-
+    
+	  # For Multiclass Training:
+	  python3 MultiBauelement.py train --dataset=/home/parchami/PycharmProjects/Mask_RCNN/datasets/WRelement --weights=coco
+    
     # Resume training a model that you had trained earlier
     python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=last
 
