@@ -1,7 +1,7 @@
 # MaskRCNN
 Implementation of [Mask R-CNN](https://arxiv.org/abs/1703.06870) on Python 3,  Keras, and TensorFlow. for detecting Bauelemente
 
-![Instance Segmentation Sample](samples/BauelementSegmentation/bauelement.png)
+![Instance Segmentation Sample for one class training](samples/BauelementSegmentation/bauelement.png)
 
 The repository includes:
 * Source code of Mask R-CNN built on FPN and ResNet101.
@@ -67,13 +67,15 @@ use those weights as a starting point to train your own variation on the network
 Usage: import the module (see Jupyter notebooks for examples), or run from the command line as such:
 
     # Train a new model starting from pre-trained COCO weights
-    python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=coco
+    python3 coco.py train --dataset=/path/to/bauelement/dataset --weights=coco
     
     # For example: 
-    python3 Bauelement.py train --dataset=/home/parchami/PycharmProjects/MaskRCNN/datasets/BauelementDataset --weights=coco
+    python3 Bauelement.py train --dataset=/home/parchami/PycharmProjects/MaskRCNN/datasets/BauelementDataset
+    --weights=coco
     
-	  # For Multiclass Training:
-	  python3 MultiBauelement.py train --dataset=/home/parchami/PycharmProjects/Mask_RCNN/datasets/WRelement --weights=coco
+    # For Multiclass Training:
+    python3 MultiBauelement.py train --dataset=/home/parchami/PycharmProjects/Mask_RCNN/datasets/WRelement
+    --weights=coco
     
     # Resume training a model that you had trained earlier
     python3 Bauelement.py train --dataset=/path/to/bauelement/dataset --weights=last
@@ -94,4 +96,5 @@ It allows you to use new datasets for training without having to change
 the code of the model. It also supports loading multiple datasets at the
 same time, which is useful if the objects you want to detect are not 
 all available in one dataset. 
-See examples in `samples/coco/coco.py`, `samples/BauelementSegmentation/Bauelement.py`.
+
+See examples in `samples/coco/coco.py`, `samples/BauelementSegmentation/Bauelement.py`, `samples/BauelementSegmentation/MultiBauelement.py`.
