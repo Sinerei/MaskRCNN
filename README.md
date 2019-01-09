@@ -104,5 +104,5 @@ See examples in `samples/coco/coco.py`, `samples/BauelementSegmentation/Baueleme
 To train in Multiclass mode useing `MultiBauelement.py`.
 You should only add some classes using add.class() method and adding class_id's to JSON attribute field and train new weights.
 
-![Instance Segmentation Sample for multi class training](samples/BauelementSegmentation/Multiclass.png)
+![Instance Segmentation Sample for multi class training](assets/Multiclass.png)
 
