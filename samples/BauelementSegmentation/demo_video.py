@@ -4,7 +4,9 @@ from mrcnn.visualize_video import display_instances
 import os
 import sys
 
+# Give a video file name placed in this directory
 VIDEO_NAME = 'kondensators.mp4'
+OUTPUT_NAME = 'Masked_video.avi'
 
 # Root directory of the project
 ROOT_DIR = os.path.abspath("../../")
@@ -48,7 +50,7 @@ size = (int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
 codec = cv2.VideoWriter_fourcc(*'DIVX')
-output = cv2.VideoWriter('masked_video.avi', codec, 20.0, size)
+output = cv2.VideoWriter(OUTPUT_NAME, codec, 20.0, size)
 
 # i = 0
 # frame_rate_divider = 3
